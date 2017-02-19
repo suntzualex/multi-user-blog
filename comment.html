@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>CREATE COMMENT</h2>
+<h4>Comment for {{blog.title}}</h4>
+<div class="content">{{blog.content}}</div>
+<form action="/comment" method="post">
+  <label>Your comment</label><br>
+  <textarea cols="30" rows= "8" id="comment" name="comment"></textarea>
+  <input type="submit" value="CREATE">
+</form>
+{% endblock %}

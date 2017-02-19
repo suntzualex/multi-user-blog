@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Multi User Blog</title>
+    <link type="text/css" rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6 center">
+        <ul class="nav nav-pills">
+           <li><a href="/">HOME</a></li><li><a href="/signin">SIGN IN</a></li>
+           <li><a href="/create_blog">CREATE BLOG</a></li>
+           {% block nav %}
+           {% endblock %}
+         </ul>
+         <span class="message">{{message}}</span>
+  {% block content %}
+  {% endblock %}
+     </div>
+     <div class="col-sm-3"></div>
+</div>
+  </div>
+</body>
+</html>

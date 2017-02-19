@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block nav %}
+<li><a href="/{{login.lower()}}">{{login}}</a></li>
+{% endblock %}
+{% block content %}
+  <h2>ALL THE BLOGS</h2>
+  {% if noblogs %}
+  <h3>There are no blogs to show, you can sign in and create one.</h3>
+  <p>Just hop over to the signin page and then create a blog.</p>
+  {% endif %}
+  <span class="error">{{login_error}}</span>
+  <span class="error">{{voting_error}}</span>
+  {% for blog in blogs %}
+  <div class="blog">
+  <div class="title">
+  <h2><a href="blogpage/{{blog.key().id()}}">{{blog.title}}</a></h2>
+  <span class="creation_date">
+    <h5>Created: {{blog.created.strftime("%b %d, %Y")}} Last-Modified: {{blog.last_modified.strftime("%b %d, %Y")}}</h5>
+  </span>
+    </div>
+  <div class="content">
+    {{blog.content}}
+  </div>
+  <div class="submenu_blog">
+  <form action="/comment" method="get">
+  <input type="hidden" name="current_blog" value="{{blog.key().id()}}">
+  <button type="submit" class="btn btn-default btn-sm comment">
+  <span class="glyphicon glyphicon-comment"></span> Comment
+  </button>
+</form>
+  <form action="/edit" method="post">
+  <input type="hidden" name="current_blog" value="{{blog.key().id()}}">
+  <button type="submit" name="edit" class="btn btn-default btn-sm edit">
+    <span class="glyphicon glyphicon-edit"></span> Edit
+  </button>
+</form>
+  <form action="/" method="post">
+  <input type="hidden" name="current_blog" value="{{blog.key().id()}}">
+  <button type="submit" name="like" value="True" class="btn btn-default btn-sm like">
+    <span class="glyphicon glyphicon-thumbs-up"></span> Like {{likes}}
+  </button>
+  <button type="submit" name="like" value="False" class="btn btn-default btn-sm dislike">
+  <span class="glyphicon glyphicon-thumbs-down"></span> Dislike {{dislikes}}
+</button>
+</form>
+  </div>
+</div><!-- end class blog -->
+<!-- TODO: stop de comments in een harmonica voor jquery -->
+<div class="comments">
+  {% for comment in comments %}
+   <div class="comment">
+     {{comment}}
+   </div>
+  {% endfor %}
+</div> <!-- end comments -->
+  {% endfor %}
+{% endblock %}

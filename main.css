@@ -1,0 +1,94 @@
+
+body{
+  background-color: grey !important;
+}
+
+.error{
+  color: red;
+}
+
+.creation_date{
+  font-weight: bold;
+  font-style: italic;
+}
+
+ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+ul{
+  list-style: none;
+}
+
+ul li{
+  display: inline-block;
+  float left;
+  background-color: black;
+  margin: 3px;
+  padding: 5px;
+}
+
+.row{
+  background-color: grey;
+}
+
+.col-sm-6{
+  background-color: white;
+}
+
+.center{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.blog{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.submenu_blog{
+  width: 70%;
+  min-height: 20px;
+}
+.submenu_blog button.comment, button.edit {
+  margin-top: 5px;
+  float: left;
+}
+.submenu_blog button.like, button.dislike{
+  margin-top: 5px;
+  float:right;
+}
+.glyphicon-thumbs-up{
+  color: green;
+
+}
+.glyphicon-thumbs-down{
+  color: red;
+}
+
+.blogslist a li{
+  background-color: white;
+  color: black;
+  border: 1px solid gray;
+  min-width: 150px;
+}
+
+.blogslist a li:hover{
+  background-color: black;
+  color: white;
+  border-bottom: 2px solid yellow;
+  border-right: 2px solid yellow;
+}
+
+.fancy_title{
+  text-decoration: underline;
+  opacity: 0.5;
+  font-weight: bold;
+}
+
+.content{
+  padding: 5px;
+  border: 1px solid gray;
+  width: 70%;
+}

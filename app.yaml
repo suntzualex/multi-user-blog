@@ -1,0 +1,17 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+# [START handlers]
+handlers:
+- url: /css
+  static_dir: static/css
+- url: /js
+  static_dir: static/js
+- url: /.*
+  script: multi_user_blog.app
+# [END handlers]
+
+libraries:
+- name: jinja2
+  version: latest

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="header">
+<h2>SIGN IN</h2>
+</div>
+<form method="post" action="/signin">
+  <div class="form-element">
+  <label>Username:
+    <input type="text" name="username" value="{{params['username']}}">
+  </label>
+  <span class="error">{{params['no_username']}}</span>
+  <span class="error">{{params['invalid_username']}}</span>
+  <span class="error">{{params['existing_user']}}
+</div>
+<div class="form-element">
+  <label>Password:
+    <input type="password" name="password">
+  </label>
+  <span class="error">{{params['no_password']}}</span>
+  <span class="error">{{params['invalid_password']}}</span>
+</div>
+<div class="form-element">
+  <label>Verify password:
+    <input type="password" name="verify">
+  </label>
+  <span class="error">{{params['no_verify']}}</span>
+  <span class="error">{{params['invalid_verify']}}</span>
+  </div>
+  <div class="form-element">
+    <label>Email: (Optional)
+      <input type="email" name="email" value="{{params['email']}}">
+    </label>
+    <span class="error">{{params['invalid_email']}}</span>
+  </div>
+  <div class="form-element">
+    <input type="submit" value="SIGN IN">
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block nav %}
+<li><a href="/{{login.lower()}}">{{login}}</a></li>
+{% endblock %}
+{% block content %}
+<div class="header">
+<h2>LOG IN</h2>
+</div>
+<form method="post" action="/login">
+  <div class="form-element">
+  <label>Username:
+    <input type="text" name="username" value="{{username}}">
+  </label>
+</div>
+<div class="form-element">
+  <label>Password:
+    <input type="password" name="password">
+  </label>
+</div>
+<div class="form-element">
+    <input type="submit" value="LOG IN">
+    <span class="error">{{error}}</span>
+  </div>
+{% endblock %}
