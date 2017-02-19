@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="header">
+  <h2>CREATE YOUR BLOG</h2>
+
+<form action="/create_blog" method="post">
+  <div class="form-field">
+    <label>Title:
+      <input type="text" name="title" value="{{params['title']}}">
+    </label>
+      <span class="error">{{params['missing_title']}}</span>
+  </div>
+  <div class="form-field">
+    <label>Content:</label><br>
+    <textarea rows="10" cols="30" name="content">{{params['content']}}</textarea>
+    <span class="error">{{params['missing_content']}}</span>
+  </div>
+  <div class="form-field">
+    <input type="submit" value="CREATE">
+    <span class="error">{{params['all_empty']}}</span>
+  </div>
+{% endblock %}
